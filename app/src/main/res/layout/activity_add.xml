@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Theme.PetProject_app_Notepad.Background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/activity_add_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:visibility="gone"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/desc_image_view"
+                android:layout_marginTop="@dimen/image_view_margin_top"
+                android:layout_marginStart="@dimen/image_view_margin_start"
+                android:layout_marginEnd="@dimen/image_view_margin_end"
+                android:layout_marginBottom="@dimen/image_view_margin_bottom"
+                style="@style/Theme.PetProject_app_Notepad.BackgroundImageView"/>
+
+            <EditText
+                android:id="@+id/activity_add_edit_text_title"
+                style="@style/Theme.PetProject_app_Notepad.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/edit_text_title_margin_start"
+                android:layout_marginTop="@dimen/edit_text_title_margin_top"
+                android:layout_marginEnd="@dimen/edit_text_title_margin_end"
+                android:layout_marginBottom="@dimen/edit_text_title_margin_bottom"
+                android:gravity="start"
+                android:hint="@string/hint_text_view_title"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLength="63"
+                android:maxLines="3"
+                android:paddingStart="@dimen/edit_text_title_padding_start"
+                android:paddingTop="@dimen/edit_text_title_padding_top"
+                android:paddingEnd="@dimen/edit_text_title_padding_end"
+                android:paddingBottom="@dimen/edit_text_title_padding_bottom"
+                android:textSize="@dimen/edit_text_title_size"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/activity_add_edit_text_description"
+                style="@style/Theme.PetProject_app_Notepad.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/edit_text_description_margin_start"
+                android:layout_marginTop="@dimen/edit_text_description_margin_top"
+                android:layout_marginEnd="@dimen/edit_text_description_margin_end"
+                android:layout_marginBottom="@dimen/edit_text_description_margin_bottom"
+                android:gravity="start|top"
+                android:hint="@string/hint_text_view_description"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textCapSentences"
+                android:paddingStart="@dimen/edit_text_description_padding_start"
+                android:paddingTop="@dimen/edit_text_description_padding_top"
+                android:paddingEnd="@dimen/edit_text_description_padding_end"
+
+                android:paddingBottom="@dimen/edit_text_description_padding_bottom"
+                android:textSize="@dimen/edit_text_description_size" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fab_more_margin_end"
+        android:layout_marginBottom="@dimen/fab_more_margin_bottom"
+        android:clickable="true"
+        android:contentDescription="@string/desc_fab_more"
+        android:elevation="@dimen/fab_elevation"
+        android:focusable="true"
+        android:theme="@style/Theme.PetProject_app_Notepad.FAB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_fab_more_up" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:visibility="invisible"
+        android:id="@+id/floatingActionButton_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fab_save_margin_end"
+        android:layout_marginBottom="@dimen/fab_save_margin_bottom"
+        android:clickable="true"
+        android:contentDescription="@string/desc_fab_save"
+        android:elevation="@dimen/fab_elevation"
+        android:focusable="true"
+        android:theme="@style/Theme.PetProject_app_Notepad.FAB"
+        app:layout_constraintBottom_toTopOf="@id/floatingActionButton_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_fab_save"
+        android:scaleY="0.9"
+        android:scaleX="0.9"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:visibility="invisible"
+        android:id="@+id/floatingActionButton_add_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fab_add_image_margin_end"
+        android:layout_marginBottom="@dimen/fab_add_image_margin_bottom"
+        android:clickable="true"
+        android:contentDescription="@string/desc_fab_add_image"
+        android:elevation="@dimen/fab_elevation"
+        android:focusable="true"
+        android:theme="@style/Theme.PetProject_app_Notepad.FAB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/floatingActionButton_more"
+        app:srcCompat="@drawable/ic_fab_add_image"
+        android:scaleY="0.9"
+        android:scaleX="0.9"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:visibility="invisible"
+        android:id="@+id/floatingActionButton_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fab_share_margin_end"
+        android:layout_marginBottom="@dimen/fab_share_margin_bottom"
+        android:clickable="true"
+        android:contentDescription="@string/desc_fab_add_image"
+        android:elevation="@dimen/fab_elevation"
+        android:focusable="true"
+        android:theme="@style/Theme.PetProject_app_Notepad.FAB"
+        app:layout_constraintBottom_toTopOf="@id/floatingActionButton_more"
+        app:layout_constraintEnd_toStartOf="@id/floatingActionButton_more"
+        app:srcCompat="@drawable/ic_fab_share"
+        android:scaleY="0.9"
+        android:scaleX="0.9"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

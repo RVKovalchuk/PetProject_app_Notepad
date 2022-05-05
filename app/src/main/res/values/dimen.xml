@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //shape
+    <dimen name="shape_stroke_width">2dp</dimen>
+    <dimen name="shape_stroke_background_image_view_width">3dp</dimen>
+
+    //fab more
+    <dimen name="fab_elevation">16dp</dimen>
+    <dimen name="fab_more_margin_end">16dp</dimen>
+    <dimen name="fab_more_margin_bottom">16dp</dimen>
+    <dimen name="fab_save_margin_end">16dp</dimen>
+    <dimen name="fab_save_margin_bottom">8dp</dimen>
+    <dimen name="fab_add_image_margin_end">8dp</dimen>
+    <dimen name="fab_add_image_margin_bottom">16dp</dimen>
+    <dimen name="fab_share_margin_end">8dp</dimen>
+    <dimen name="fab_share_margin_bottom">8dp</dimen>
+
+    //title edit_text_view
+    <dimen name="edit_text_title_margin_end">16dp</dimen>
+    <dimen name="edit_text_title_margin_start">16dp</dimen>
+    <dimen name="edit_text_title_margin_top">16dp</dimen>
+    <dimen name="edit_text_title_margin_bottom">16dp</dimen>
+    <dimen name="edit_text_title_padding_end">16dp</dimen>
+    <dimen name="edit_text_title_padding_start">16dp</dimen>
+    <dimen name="edit_text_title_padding_top">16dp</dimen>
+    <dimen name="edit_text_title_padding_bottom">16dp</dimen>
+    <dimen name="edit_text_title_size">24sp</dimen>
+
+    <dimen name="edit_text_description_margin_end">16dp</dimen>
+    <dimen name="edit_text_description_margin_start">16dp</dimen>
+    <dimen name="edit_text_description_margin_top">16dp</dimen>
+    <dimen name="edit_text_description_margin_bottom">16dp</dimen>
+    <dimen name="edit_text_description_padding_end">16dp</dimen>
+    <dimen name="edit_text_description_padding_start">16dp</dimen>
+    <dimen name="edit_text_description_padding_top">16dp</dimen>
+    <dimen name="edit_text_description_padding_bottom">16dp</dimen>
+    <dimen name="edit_text_description_size">16sp</dimen>
+
+
+    //image view
+    <dimen name="image_view_margin_end">3dp</dimen>
+    <dimen name="image_view_margin_start">3dp</dimen>
+    <dimen name="image_view_margin_top">3dp</dimen>
+    <dimen name="image_view_margin_bottom">3dp</dimen>
+</resources>

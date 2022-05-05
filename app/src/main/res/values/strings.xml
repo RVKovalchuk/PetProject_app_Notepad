@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PetProject_app_Notepad</string>
+    <string name="desc_fab_save">FAB для добавления новой заметки</string>
+    <string name="desc_fab_add_image">FAB для добавления нового изображения</string>
+    <string name="desc_fab_more">FAB для появления скрытых кнопок</string>
+    <string name="desc_fab_share">FAB для отправки поста</string>
+    <string name="desc_image_view">Описание изображения в новой заметке</string>
+    <string name="hint_text_view_title">Заголовок</string>
+    <string name="hint_text_view_description">Поле для ввода текста</string>
+    <string name="toast_new_post_was_added">Запись добавлена</string>
+</resources>

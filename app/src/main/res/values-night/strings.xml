@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="desc_fab_add">Floating action button of adding new strings to the data base.</string>
+    <string name="hint_text_view_title">Заголовок</string>
+</resources>
