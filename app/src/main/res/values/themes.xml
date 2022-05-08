@@ -36,5 +36,9 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="Theme.PetProject_app_Notepad.TextView" parent="Theme.PetProject_app_Notepad">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 
 </resources>

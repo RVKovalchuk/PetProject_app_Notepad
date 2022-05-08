@@ -3,6 +3,8 @@ package com.example.petproject_app_notepad.db
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import android.provider.BaseColumns
+import android.widget.Toast
 
 class DatabaseManager(context: Context) {
     private val databaseHelper = DatabaseHelper(context)
@@ -16,13 +18,18 @@ class DatabaseManager(context: Context) {
         databaseHelper.close()
     }
 
-    fun insertToDatabase(title: String, description: String, uri: String) {
+    fun insertToDatabase(title: String, description: String, image_uri: String) {
         val values = ContentValues().apply {
             put(TableClass.COLUMN_NAME_TITLE, title)
             put(TableClass.COLUMN_NAME_DESCRIPTION, description)
-            put(TableClass.COLUMN_NAME_IMAGE_URI, uri)
+            put(TableClass.COLUMN_NAME_IMAGE_URI, image_uri)
         }
         db?.insert(TableClass.TABLE_NAME, null, values)
+    }
+
+    fun removeFromDatabase(id: String) {
+        val positionOfDeletion = BaseColumns._ID + "=$id"
+        db?.delete(TableClass.TABLE_NAME, positionOfDeletion, null)
     }
 
     fun readFromDatabase(): ArrayList<PostItemClass> {
@@ -32,12 +39,18 @@ class DatabaseManager(context: Context) {
             null, null, null
         )
         while (cursor?.moveToNext() == true) {
-            val postTitle = cursor.getString(cursor.getColumnIndexOrThrow(TableClass.COLUMN_NAME_TITLE))
-            val postDesc = cursor.getString(cursor.getColumnIndexOrThrow(TableClass.COLUMN_NAME_DESCRIPTION))
-            val postUri = cursor.getString(cursor.getColumnIndexOrThrow(TableClass.COLUMN_NAME_IMAGE_URI))
-            val post = PostItemClass(postTitle, postDesc, postUri)
+            val postId =
+                cursor.getInt(cursor.getColumnIndexOrThrow(BaseColumns._ID))
+            val postTitle =
+                cursor.getString(cursor.getColumnIndexOrThrow(TableClass.COLUMN_NAME_TITLE))
+            val postDesc =
+                cursor.getString(cursor.getColumnIndexOrThrow(TableClass.COLUMN_NAME_DESCRIPTION))
+            val postUri =
+                cursor.getString(cursor.getColumnIndexOrThrow(TableClass.COLUMN_NAME_IMAGE_URI))
+            val post = PostItemClass(postTitle, postDesc, postUri, postId)
             postList.add(post)
         }
+        cursor?.close()
         return postList
     }
 }

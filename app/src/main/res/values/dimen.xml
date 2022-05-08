@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="zero_dp">0dp</dimen>
+
+
     //shape
     <dimen name="shape_stroke_width">2dp</dimen>
     <dimen name="shape_stroke_background_image_view_width">3dp</dimen>
@@ -42,4 +45,18 @@
     <dimen name="image_view_margin_start">3dp</dimen>
     <dimen name="image_view_margin_top">3dp</dimen>
     <dimen name="image_view_margin_bottom">3dp</dimen>
+
+    //post_item
+    <dimen name="post_item_layout_height">170dp</dimen>
+    <dimen name="post_item_layout_margin_start">16dp</dimen>
+    <dimen name="post_item_layout_margin_end">16dp</dimen>
+    <dimen name="post_item_layout_margin_top">8dp</dimen>
+    <dimen name="post_item_layout_margin_bottom">8dp</dimen>
+    <dimen name="post_item_image_width">120dp</dimen>
+    <dimen name="post_item_image_height">160dp</dimen>
+    <dimen name="post_item_image_margin_all_sides">5dp</dimen>
+    <dimen name="post_item_text_margin_all_sides">5dp</dimen>
+    <dimen name="post_item_text_title_size">20sp</dimen>
+    <dimen name="post_item_text_description_size">18sp</dimen>
+
 </resources>

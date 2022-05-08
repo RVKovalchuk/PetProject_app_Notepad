@@ -2,4 +2,5 @@
 <resources>
     <string name="desc_fab_add">Floating action button of adding new strings to the data base.</string>
     <string name="hint_text_view_title">Заголовок</string>
+    <string name="desc_rv_post_image_view">Описание для image view</string>
 </resources>

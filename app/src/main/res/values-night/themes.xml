@@ -35,4 +35,8 @@
         <item name="android:textColorHighlight">@color/grey_light</item>
         <item name="android:textColor">@color/white</item>
     </style>
+
+    <style name="Theme.PetProject_app_Notepad.TextView" parent="Theme.PetProject_app_Notepad">
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

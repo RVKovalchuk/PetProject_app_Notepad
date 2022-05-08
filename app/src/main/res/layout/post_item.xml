@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Theme.PetProject_app_Notepad.Background"
+    android:id="@+id/rv_post_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/post_item_layout_height"
+    android:layout_marginStart="@dimen/post_item_layout_margin_start"
+    android:layout_marginEnd="@dimen/post_item_layout_margin_end"
+    android:layout_marginBottom="@dimen/post_item_layout_margin_bottom"
+    android:layout_marginTop="@dimen/post_item_layout_margin_top">
+
+    <ImageView
+        android:id="@+id/rv_post_item_image"
+        android:layout_width="@dimen/post_item_image_width"
+        android:layout_height="@dimen/post_item_image_height"
+        android:layout_margin="@dimen/post_item_image_margin_all_sides"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/desc_rv_post_image_view" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:theme="@style/Theme.PetProject_app_Notepad.TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rv_post_item_image"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/rv_post_item_text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/post_item_text_margin_all_sides"
+            android:maxLines="2"
+            android:textSize="@dimen/post_item_text_title_size"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/rv_post_item_text_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/post_item_text_margin_all_sides"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:textSize="@dimen/post_item_text_description_size"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
