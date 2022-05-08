@@ -1,6 +1,5 @@
 package com.example.petproject_app_notepad.db
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.example.petproject_app_notepad.AddActivity
 import com.example.petproject_app_notepad.R
 
-class RecyclerViewAdapter(private val listPosts: ArrayList<PostItemClass>, val context: Context) :
+class RecyclerViewAdapter(private val listPosts: ArrayList<PostItemClass>) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolderClass>() {
 
     class ViewHolderClass(postItem: View) : RecyclerView.ViewHolder(postItem) {

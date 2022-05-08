@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petproject_app_notepad.db.DatabaseManager
@@ -13,7 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     private val databaseManager = DatabaseManager(this)
-    private val adapter = RecyclerViewAdapter(databaseManager.readFromDatabase(), this)
+    private val adapter = RecyclerViewAdapter(databaseManager.readFromDatabase())
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

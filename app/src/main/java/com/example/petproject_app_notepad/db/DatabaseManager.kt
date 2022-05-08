@@ -4,11 +4,10 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.provider.BaseColumns
-import android.widget.Toast
 
 class DatabaseManager(context: Context) {
     private val databaseHelper = DatabaseHelper(context)
-    var db: SQLiteDatabase? = null
+    private var db: SQLiteDatabase? = null
 
     fun openDatabase() {
         db = databaseHelper.writableDatabase

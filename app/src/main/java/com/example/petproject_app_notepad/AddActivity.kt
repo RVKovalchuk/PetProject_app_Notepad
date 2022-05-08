@@ -1,9 +1,7 @@
 package com.example.petproject_app_notepad
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
@@ -21,12 +19,11 @@ class AddActivity : AppCompatActivity() {
     private val requestedCode = 10
     private var uriForSave = "empty"
     private val databaseManager = DatabaseManager(this)
-    private val context = this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
-        initButtons(context)
+        initButtons()
     }
 
     override fun onResume() {
@@ -39,7 +36,7 @@ class AddActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    private fun initButtons(context: Context) {
+    private fun initButtons() {
         val fabMore = findViewById<FloatingActionButton>(R.id.floatingActionButton_more)
         val fabSave = findViewById<FloatingActionButton>(R.id.floatingActionButton_save)
         val fabAddImage = findViewById<FloatingActionButton>(R.id.floatingActionButton_add_image)
