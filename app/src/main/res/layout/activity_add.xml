@@ -16,7 +16,8 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/activity_add_image_view"
+                android:id="@+id/rv_post_item_image"
+                android:transitionName="imageTransition"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:visibility="gone"
@@ -29,7 +30,8 @@
                 style="@style/Theme.PetProject_app_Notepad.BackgroundImageView"/>
 
             <EditText
-                android:id="@+id/activity_add_edit_text_title"
+                android:id="@+id/rv_post_item_text_title"
+                android:transitionName="titleTransition"
                 style="@style/Theme.PetProject_app_Notepad.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,7 +53,8 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/activity_add_edit_text_description"
+                android:id="@+id/rv_post_item_text_description"
+                android:transitionName="descriptionTransition"
                 style="@style/Theme.PetProject_app_Notepad.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

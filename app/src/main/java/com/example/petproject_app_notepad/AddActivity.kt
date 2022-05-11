@@ -2,6 +2,7 @@ package com.example.petproject_app_notepad
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
@@ -10,6 +11,9 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.core.view.isVisible
+import androidx.transition.Explode
+import androidx.transition.Transition
+import androidx.transition.TransitionSet
 import com.bumptech.glide.Glide
 import com.example.petproject_app_notepad.db.DatabaseManager
 import com.example.petproject_app_notepad.db.IntentConstant
@@ -41,9 +45,9 @@ class AddActivity : AppCompatActivity() {
         val fabSave = findViewById<FloatingActionButton>(R.id.floatingActionButton_save)
         val fabAddImage = findViewById<FloatingActionButton>(R.id.floatingActionButton_add_image)
         val fabShare = findViewById<FloatingActionButton>(R.id.floatingActionButton_share)
-        val imageView = findViewById<ImageView>(R.id.activity_add_image_view)
-        val titleView = findViewById<EditText>(R.id.activity_add_edit_text_title)
-        val descView = findViewById<EditText>(R.id.activity_add_edit_text_description)
+        val imageView = findViewById<ImageView>(R.id.rv_post_item_image)
+        val titleView = findViewById<EditText>(R.id.rv_post_item_text_title)
+        val descView = findViewById<EditText>(R.id.rv_post_item_text_description)
         onClickFabMore(fabMore, fabSave, fabAddImage, fabShare)
         onClickFabAddImage(fabAddImage, imageView)
         onClickFabSave(fabSave, titleView, descView)
@@ -57,6 +61,8 @@ class AddActivity : AppCompatActivity() {
     ) {
         var upMoreOrDownMore = 0
         fabMore.setOnClickListener {
+
+
             if (upMoreOrDownMore == 0) {
                 fabShare.isVisible = true
                 fabSave.isVisible = true
@@ -71,6 +77,8 @@ class AddActivity : AppCompatActivity() {
                 upMoreOrDownMore--
             }
         }
+
+
     }
 
     private fun onClickFabAddImage(
@@ -137,7 +145,7 @@ class AddActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        val imageView = findViewById<ImageView>(R.id.activity_add_image_view)
+        val imageView = findViewById<ImageView>(R.id.rv_post_item_image)
         if (requestCode == requestedCode && resultCode == Activity.RESULT_OK) {
             Glide
                 .with(this)

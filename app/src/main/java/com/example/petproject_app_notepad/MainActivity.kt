@@ -1,11 +1,15 @@
 package com.example.petproject_app_notepad
 
+import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Pair
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import androidx.transition.Slide
 import com.example.petproject_app_notepad.db.DatabaseManager
 import com.example.petproject_app_notepad.db.RecyclerViewAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -13,7 +17,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class MainActivity : AppCompatActivity() {
     private val databaseManager = DatabaseManager(this)
     private val adapter = RecyclerViewAdapter(databaseManager.readFromDatabase())
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +50,8 @@ class MainActivity : AppCompatActivity() {
     private fun onClickAddNew() {
         val fabAddNew = findViewById<FloatingActionButton>(R.id.floatingActionButton_add_new)
         fabAddNew.setOnClickListener {
-            startActivity(Intent(this, AddActivity::class.java))
+            val options = ActivityOptions.makeSceneTransitionAnimation(this)
+            startActivity(Intent(this, AddActivity::class.java), options.toBundle())
         }
     }
 

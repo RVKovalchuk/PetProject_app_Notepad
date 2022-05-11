@@ -1,12 +1,16 @@
 package com.example.petproject_app_notepad.db
 
+import android.app.ActivityOptions
 import android.content.Intent
+import android.util.Pair
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -40,7 +44,11 @@ class RecyclerViewAdapter(private val listPosts: ArrayList<PostItemClass>) :
                     putExtra(IntentConstant.INTENT_DESCRIPTION, post.description)
                     putExtra(IntentConstant.INTENT_URI, post.uri)
                 }
-                context.startActivity(intent)
+                imageItem.transitionName = "imageTransition"
+                titleItem.transitionName = "titleTransition"
+                descItem.transitionName =  "descriptionTransition"
+                val options = ActivityOptions.makeSceneTransitionAnimation(context  as AppCompatActivity, Pair(imageItem, "imageTransition"), Pair(titleItem, "titleTransition"), Pair(descItem, "descriptionTransition"))
+                context.startActivity(intent, options.toBundle())
             }
         }
 
